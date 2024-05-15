@@ -1,9 +1,32 @@
 from openpyxl import Workbook
-import csv
+from pandas import DataFrame
+import pandas as pd
+import pyodbc
 
 class ExportadorBiblioteca:
     def __init__(self, biblioteca):
         self.biblioteca = biblioteca
+
+    def exportar_a_access(self, nombre_archivo):
+      print("Exportando...")
+
+    def exportar_a_sql(self, nombre_archivo):
+            with open(nombre_archivo, 'w') as f:
+                # Escribir el encabezado del archivo SQL
+                f.write("-- Script de inserción SQL para la tabla Libros\n\n")
+                f.write("INSERT INTO Libros (Título, Autor, Género, ISBN) VALUES\n")
+
+                # Escribir los datos de cada libro como una instrucción INSERT
+                first = True
+                for libro in self.biblioteca.libros:
+                    if not first:
+                        f.write(",\n")
+                    else:
+                        first = False
+                    values = f"('{libro.titulo}', '{libro.autor}', '{libro.genero}', '{libro.isbn}')"
+                    f.write(values)
+
+            print(f"Biblioteca exportada a archivo SQL en '{nombre_archivo}'.")
 
     def exportar_a_excel(self, nombre_archivo):
         # Crear un nuevo libro de Excel (workbook)

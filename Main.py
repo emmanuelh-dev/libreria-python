@@ -1,6 +1,7 @@
 from Biblioteca import Biblioteca
 from Libro import Libro
 from Exports import ExportadorBiblioteca
+
 def menu():
     opciones = {
         '1': 'AGREGAR',
@@ -50,21 +51,21 @@ def main():
                 # Submenú para seleccionar formato de exportación
                 while True:
                     print("Seleccione el formato de exportación:")
-                    print("1. Exportar a CSV")
+                    print("1. Exportar a Acces")
                     print("2. Exportar a Excel")
                     print("3. Exportar a SQL")
                     print("4. Volver al menú principal")
                     sub_opcion = input("Ingrese su opción: ")
 
                     if sub_opcion == "1":
-                        nombre_archivo_csv = input("Ingrese el nombre del archivo CSV: ")
-                        exportador.exportar_a_csv(nombre_archivo_csv)
+                        nombre_archivo_acces = input("Ingrese el nombre del archivo Acces: ")
+                        exportador.exportar_a_access(f"{nombre_archivo_acces}.accdb")
                     elif sub_opcion == "2":
                         nombre_archivo_excel = input("Ingrese el nombre del archivo Excel: ")
                         exportador.exportar_a_excel(f"{nombre_archivo_excel}.xlsx")
                     elif sub_opcion == "3":
                         nombre_archivo_sql = input("Ingrese el nombre del archivo SQL: ")
-                        exportador.exportar_a_sql(nombre_archivo_sql)
+                        exportador.exportar_a_sql(f"{nombre_archivo_sql}.sql")
                     elif sub_opcion == "4":
                         break
                     else:

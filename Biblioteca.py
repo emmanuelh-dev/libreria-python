@@ -80,7 +80,7 @@ class Biblioteca:
             "3": "genero",
             "4": "isbn"
         }
-        opciones_validas = ['1', '2', '3', '4', '5']
+        opciones_validas = ['1', '2', '3', '4']
 
         if not self.libros:
             print("No hay libros disponibles")
