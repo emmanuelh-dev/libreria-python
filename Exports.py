@@ -7,9 +7,6 @@ class ExportadorBiblioteca:
     def __init__(self, biblioteca):
         self.biblioteca = biblioteca
 
-    def exportar_a_access(self, nombre_archivo):
-      print("Exportando...")
-
     def exportar_a_sql(self, nombre_archivo):
             with open(nombre_archivo, 'w') as f:
                 # Escribir el encabezado del archivo SQL
@@ -51,3 +48,6 @@ class ExportadorBiblioteca:
 
         # Mostrar mensaje de éxito
         print(f"Biblioteca exportada a Excel en '{nombre_archivo}'.")
+
+    def exportar_a_access(self, nombre_archivo):
+      print("Exportando...")
