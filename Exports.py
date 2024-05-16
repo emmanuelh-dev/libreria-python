@@ -14,7 +14,7 @@ class ExportadorBiblioteca:
             with open(nombre_archivo, 'w') as f:
                 # Escribir el encabezado del archivo SQL
                 f.write("-- Script de inserción SQL para la tabla Libros\n\n")
-                f.write("INSERT INTO Libros (Título, Autor, Género, ISBN) VALUES\n")
+                f.write("INSERT INTO Libros (titulo, autor, genero, isbn) VALUES\n")
 
                 # Escribir los datos de cada libro como una instrucción INSERT
                 first = True
